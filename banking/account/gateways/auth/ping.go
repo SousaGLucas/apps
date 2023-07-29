@@ -2,7 +2,6 @@ package auth
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"net/http"
 )
@@ -22,10 +21,5 @@ func (c *Client) Ping(ctx context.Context) (string, error) {
 		return "", fmt.Errorf("executing request: %w", err)
 	}
 
-	var body PingResponse
-	if err := json.Unmarshal(resp, &body); err != nil {
-		return "", fmt.Errorf("unmarshaling response body: %w", err)
-	}
-
-	return string(body), nil
+	return string(resp), nil
 }

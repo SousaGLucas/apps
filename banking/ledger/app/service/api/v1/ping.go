@@ -9,6 +9,6 @@ import (
 func Ping() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		render.Status(r, http.StatusOK)
-		render.PlainText(w, r, "Banking Ledger Microservice V1")
+		render.PlainText(w, r, "Banking Ledger Microservice V1 running...")
 	}
 }

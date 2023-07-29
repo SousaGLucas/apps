@@ -39,7 +39,7 @@ func Ping(authCli *auth.Client, ledgerCli *ledger.Client) http.HandlerFunc {
 			return
 		}
 
-		accountPing := "Banking Account Microservice V1"
+		accountPing := "Banking Account Microservice V1 running..."
 
 		render.Status(r, http.StatusOK)
 		render.PlainText(w, r, fmt.Sprintf("%s\n%s\n%s\n", authPing, ledgerPing, accountPing))
