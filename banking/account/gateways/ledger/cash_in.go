@@ -16,7 +16,7 @@ type CashInRequest struct {
 }
 
 func (c *Client) CashIn(ctx context.Context, ledgerAccountID uuid.UUID, amount int) error {
-	const path = "/api/v1/accounts/%s/cash_in"
+	const path = "/ledger/api/v1/accounts/%s/cash_in"
 
 	req, err := c.newRequest(ctx, http.MethodPost, fmt.Sprintf(path, ledgerAccountID), CashInRequest{
 		Amount: amount,

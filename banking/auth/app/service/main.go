@@ -90,8 +90,6 @@ func Main(logger *zap.Logger, cfg config) error {
 	router := api.NewServer(logger)
 
 	apiV1 := v1.API{
-		Ping: v1.Ping(),
-
 		CreateUserHandler: v1.CreateUserHandler(createUserUseCase),
 		GetUserHandler:    v1.GetUserHandler(getUserUseCase),
 		ListUsersHandler:  v1.ListUsersHandler(listUsersUseCase),

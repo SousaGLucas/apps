@@ -23,7 +23,7 @@ type CreateUserResponse struct {
 }
 
 func (c *Client) CreateUser(ctx context.Context, user entities.User) (uuid.UUID, error) {
-	const path = "/api/v1/users"
+	const path = "/auth/api/v1/users"
 
 	req, err := c.newRequest(ctx, http.MethodPost, path, CreateUserRequest{
 		Name:     user.Name,

@@ -16,7 +16,7 @@ type CashOutRequest struct {
 }
 
 func (c *Client) CashOut(ctx context.Context, ledgerAccountID uuid.UUID, amount int) error {
-	const path = "/api/v1/accounts/%s/cash_out"
+	const path = "/ledger/api/v1/accounts/%s/cash_out"
 
 	req, err := c.newRequest(ctx, http.MethodPost, fmt.Sprintf(path, ledgerAccountID), CashOutRequest{
 		Amount: amount,

@@ -17,7 +17,7 @@ type GetBalanceResponse struct {
 }
 
 func (c *Client) GetBalance(ctx context.Context, ledgerAccountID uuid.UUID) (int, error) {
-	const path = "/api/v1/accounts/%s/balance"
+	const path = "/ledger/api/v1/accounts/%s/balance"
 
 	req, err := c.newRequest(ctx, http.MethodGet, fmt.Sprintf(path, ledgerAccountID), nil)
 	if err != nil {
