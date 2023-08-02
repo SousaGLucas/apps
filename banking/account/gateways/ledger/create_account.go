@@ -14,7 +14,7 @@ type CreateAccountResponse struct {
 }
 
 func (c *Client) CreateAccount(ctx context.Context) (uuid.UUID, error) {
-	const path = "/api/v1/accounts"
+	const path = "/ledger/api/v1/accounts"
 
 	req, err := c.newRequest(ctx, http.MethodPost, path, nil)
 	if err != nil {
